@@ -14,15 +14,30 @@ val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
 
 dependencies {
+    implementation(platform("$quarkusPlatformGroupId:quarkus-amazon-services-bom:$quarkusPlatformVersion"))
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
     implementation("io.quarkus:quarkus-rest")
     implementation("io.quarkus:quarkus-rest-jackson")
     implementation("io.quarkus:quarkus-kotlin")
-    implementation("io.quarkus:quarkus-opentelemetry")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("io.quarkus:quarkus-opentelemetry-exporter-otlp")
+    implementation("io.opentelemetry:opentelemetry-extension-aws")
+    implementation("io.opentelemetry.contrib:opentelemetry-aws-xray:1.+")
+    implementation("io.quarkiverse.amazonservices:quarkus-amazon-sns:2.13.1")
+    implementation("io.quarkus:quarkus-container-image-jib")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.quarkus:quarkus-arc")
+    implementation("io.github.oshai:kotlin-logging-jvm:6.0.3")
+    implementation("software.amazon.awssdk:netty-nio-client")
+    testImplementation("software.amazon.awssdk:url-connection-client")
+    testImplementation("com.lectra:koson:1.+")
+    testImplementation("io.rest-assured:kotlin-extensions:5.+")
+    testImplementation("org.assertj:assertj-core:3.+")
+    testImplementation("io.rest-assured:rest-assured:5+")
+    testImplementation("io.quarkiverse.amazonservices:quarkus-amazon-sqs:2.+")
     testImplementation("io.quarkus:quarkus-junit5")
-    testImplementation("io.rest-assured:rest-assured")
+    testImplementation("io.rest-assured:rest-assured:5.+")
 }
 
 group = "org.acme"
