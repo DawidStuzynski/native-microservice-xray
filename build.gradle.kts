@@ -35,7 +35,7 @@ dependencies {
     testImplementation("io.rest-assured:kotlin-extensions:5.+")
     testImplementation("org.assertj:assertj-core:3.+")
     testImplementation("io.rest-assured:rest-assured:5+")
-    testImplementation("io.quarkiverse.amazonservices:quarkus-amazon-sqs:2.+")
+    testImplementation("io.quarkiverse.amazonservices:quarkus-amazon-sqs:2.13.1")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured:5.+")
 }
