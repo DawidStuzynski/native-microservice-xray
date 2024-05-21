@@ -16,28 +16,19 @@ val quarkusPlatformVersion: String by project
 dependencies {
     implementation(platform("$quarkusPlatformGroupId:quarkus-amazon-services-bom:$quarkusPlatformVersion"))
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
-    implementation("io.quarkus:quarkus-rest")
     implementation("io.quarkus:quarkus-rest-jackson")
     implementation("io.quarkus:quarkus-kotlin")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("io.quarkus:quarkus-opentelemetry-exporter-otlp")
     implementation("io.opentelemetry:opentelemetry-extension-aws")
-    implementation("io.opentelemetry.contrib:opentelemetry-aws-xray:1.+")
-    implementation("io.quarkiverse.amazonservices:quarkus-amazon-sns:2.13.1")
-    implementation("io.quarkus:quarkus-container-image-jib")
+    implementation("io.opentelemetry.contrib:opentelemetry-aws-xray:1.35.0")
+    implementation("io.quarkiverse.amazonservices:quarkus-amazon-sns")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.quarkus:quarkus-arc")
-    implementation("io.github.oshai:kotlin-logging-jvm:6.0.3")
-    implementation("software.amazon.awssdk:netty-nio-client")
-    testImplementation("software.amazon.awssdk:url-connection-client")
-    testImplementation("com.lectra:koson:1.+")
-    testImplementation("io.rest-assured:kotlin-extensions:5.+")
-    testImplementation("org.assertj:assertj-core:3.+")
-    testImplementation("io.rest-assured:rest-assured:5+")
-    testImplementation("io.quarkiverse.amazonservices:quarkus-amazon-sqs:2.13.1")
+    implementation("software.amazon.awssdk:url-connection-client")
+    testImplementation("io.rest-assured:kotlin-extensions:5.4.0")
+    testImplementation("io.rest-assured:rest-assured")
+    testImplementation("io.quarkiverse.amazonservices:quarkus-amazon-sqs")
     testImplementation("io.quarkus:quarkus-junit5")
-    testImplementation("io.rest-assured:rest-assured:5.+")
 }
 
 group = "org.acme"
@@ -62,3 +53,4 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_21.toString()
     kotlinOptions.javaParameters = true
 }
+//    ./gradlew clean quarkusIntTest -Dquarkus.package.type=native -Dquarkus.native.container-build=true -Dquarkus.test.integration-test-profile=test

@@ -64,3 +64,9 @@ Easily start your REST Web Services
 
 
 ./gradlew clean build -Dquarkus.package.type=native -Dquarkus.native.container-build=true  quarkusIntTest
+
+
+
+CUSTOM COMMANDS:
+./gradlew assemble --stacktrace -Dquarkus.test.native-image-profile=test -Dquarkus.test.profile=test -Dquarkus.test.integration-test-profile=test -Dquarkus.package.jar.enabled=false -Dquarkus.profile=prod -Dquarkus.native.enabled=true
+./gradlew assemble --stacktrace -Dquarkus.test.native-image-profile=test -Dquarkus.test.profile=test -Dquarkus.test.integration-test-profile=test -Dquarkus.package.jar.enabled=true -Dquarkus.profile=prod -Dquarkus.native.enabled=false
