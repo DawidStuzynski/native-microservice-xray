@@ -24,7 +24,7 @@ dependencies {
     implementation("io.quarkus:quarkus-opentelemetry-exporter-otlp")
     implementation("io.opentelemetry:opentelemetry-extension-aws")
     implementation("io.opentelemetry.contrib:opentelemetry-aws-xray:1.+")
-    implementation("io.quarkiverse.amazonservices:quarkus-amazon-sns:2.13.1")
+    implementation("io.quarkiverse.amazonservices:quarkus-amazon-sns:2.15.0")
     implementation("io.quarkus:quarkus-container-image-jib")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.quarkus:quarkus-arc")
@@ -35,7 +35,7 @@ dependencies {
     testImplementation("io.rest-assured:kotlin-extensions:5.+")
     testImplementation("org.assertj:assertj-core:3.+")
     testImplementation("io.rest-assured:rest-assured:5+")
-    testImplementation("io.quarkiverse.amazonservices:quarkus-amazon-sqs:2.13.1")
+    testImplementation("io.quarkiverse.amazonservices:quarkus-amazon-sqs:2.15.0")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured:5.+")
 }
